@@ -23,7 +23,7 @@ class XibView: UIView {
     }
 
     fileprivate func initViewFromName(of viewClass: UIView) -> UIView {
-        let name = String(describing: type(of: viewClass))
+        let name = String(describing: type(of: viewClass)).components(separatedBy: "<")[0]
         let nib = UINib(nibName: name, bundle: nil)
         guard let view = nib.instantiate(withOwner: viewClass, options: nil).first as? UIView else {
             fatalError("nib not found")
@@ -31,21 +31,4 @@ class XibView: UIView {
         return view
     }
 
-    fileprivate func addFullsizeView(_ view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let attributes: [NSLayoutAttribute] = [.top, .left, .right, .bottom]
-        let constraints = attributes.map { (attribute) -> NSLayoutConstraint in
-            return NSLayoutConstraint(
-                item: view,
-                attribute: attribute,
-                relatedBy: .equal,
-                toItem: self,
-                attribute: attribute,
-                multiplier: 1.0,
-                constant: 0
-            )
-        }
-        addSubview(view)
-        addConstraints(constraints)
-    }
 }

@@ -1,20 +1,18 @@
 //
-//  ViewController.swift
+//  SecondViewController.swift
 //  ViewTest
 //
-//  Created by 松原　舜也 on 2018/07/04.
+//  Created by 松原　舜也 on 2018/07/11.
 //  Copyright © 2018年 松原　舜也. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
-    private let containerView: XibView
-
-    init(_ view: FirstView = FirstView()) {
-        self.containerView = view
-        super.init(nibName: nil, bundle: nil)
+class SecondViewController: BaseViewController<SecondView> {
+    
+    init(_ view: SecondView = SecondView()) {
+        super.init(view: view)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -25,5 +23,5 @@ class ViewController: UIViewController {
         super.loadView()
         self.view = self.containerView
     }
-}
 
+}
