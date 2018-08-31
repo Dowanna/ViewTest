@@ -10,5 +10,14 @@ import Foundation
 import UIKit
 
 class SecondView: XibView {
-    
+
+    var delegate: SecondViewDelegate?
+
+    func setup(_ delegate: SecondViewDelegate) {
+        self.delegate = delegate
+    }
+
+    @IBAction func onTappedDismiss(_ sender: UIButton) {
+        self.delegate?.onTappedDismiss()
+    }
 }

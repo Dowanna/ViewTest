@@ -13,6 +13,7 @@ class SecondViewController: BaseViewController<SecondView> {
     
     init(_ view: SecondView = SecondView()) {
         super.init(view: view)
+        containerView.setup(self)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,4 +25,14 @@ class SecondViewController: BaseViewController<SecondView> {
         self.view = self.containerView
     }
 
+}
+
+protocol SecondViewDelegate {
+    func onTappedDismiss()
+}
+
+extension SecondViewController: SecondViewDelegate {
+    func onTappedDismiss() {
+        self.dismiss(animated: true)
+    }
 }

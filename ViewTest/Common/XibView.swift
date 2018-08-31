@@ -30,5 +30,4 @@ class XibView: UIView {
         }
         return view
     }
-
 }

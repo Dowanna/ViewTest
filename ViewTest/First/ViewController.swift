@@ -23,6 +23,10 @@ class ViewController: BaseViewController<FirstView> {
         super.loadView()
         self.view = self.containerView
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 }
 
 protocol FirstViewDelegate: class {
@@ -31,13 +35,9 @@ protocol FirstViewDelegate: class {
 }
 extension ViewController: FirstViewDelegate {
     func createAnotherVC() {
-        let vc = SecondViewController()
-//        vc.willMove(toParentViewController: self)
-//        addChildViewController(vc)
-        view.addFullsizeView(vc.view)
-//        vc.didMove(toParentViewController: self)
-
-//        present(ViewController(), animated: true, completion: nil)
+        let secondVC = SecondViewController()
+        let nav = UINavigationController(rootViewController: secondVC)
+        RootVC.shared.present(nav, animated: true)
     }
     func dismissVC() {
         self.childViewControllers.first?.view.removeFromSuperview()

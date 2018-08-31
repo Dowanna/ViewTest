@@ -20,16 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
         // create tabBarController
-        let tabController = UITabBarController()
-        let vc1 = ViewController()
-        let vc2 = SecondViewController()
-        let vc3 = ThirdViewController()
-        vc1.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
-        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-        vc3.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
-        tabController.viewControllers = [vc1, vc2, vc3]
         
-        self.window?.rootViewController = tabController
+        self.window?.rootViewController = RootVC.shared
         self.window?.makeKeyAndVisible()
 
         return true

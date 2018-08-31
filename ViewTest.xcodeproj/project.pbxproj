@@ -15,6 +15,8 @@
 		67AFF93220F4B18C0076FA2C /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67AFF93120F4B18C0076FA2C /* FirstView.xib */; };
 		67AFF93420F4B1CF0076FA2C /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFF93320F4B1CF0076FA2C /* FirstView.swift */; };
 		67AFF93620F4B2760076FA2C /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFF93520F4B2760076FA2C /* XibView.swift */; };
+		67C9F43B21393BC600DB452B /* BaseTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C9F43A21393BC600DB452B /* BaseTabController.swift */; };
+		67C9F43D21393E1D00DB452B /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C9F43C21393E1D00DB452B /* RootVC.swift */; };
 		67EFD1BD20ECB1CE009CE3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EFD1BC20ECB1CE009CE3E5 /* AppDelegate.swift */; };
 		67EFD1BF20ECB1CE009CE3E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EFD1BE20ECB1CE009CE3E5 /* ViewController.swift */; };
 		67EFD1C420ECB1D0009CE3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67EFD1C320ECB1D0009CE3E5 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		67AFF93120F4B18C0076FA2C /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
 		67AFF93320F4B1CF0076FA2C /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		67AFF93520F4B2760076FA2C /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		67C9F43A21393BC600DB452B /* BaseTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabController.swift; sourceTree = "<group>"; };
+		67C9F43C21393E1D00DB452B /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		67EFD1B920ECB1CE009CE3E5 /* ViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EFD1BC20ECB1CE009CE3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67EFD1BE20ECB1CE009CE3E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				67AFF93520F4B2760076FA2C /* XibView.swift */,
 				6743076120F5D09700517FCA /* BaseViewController.swift */,
 				6761A93F20F5D3FA00AEE9C8 /* PollingController.swift */,
+				67C9F43A21393BC600DB452B /* BaseTabController.swift */,
+				67C9F43C21393E1D00DB452B /* RootVC.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -351,8 +357,10 @@
 				67EFD1BF20ECB1CE009CE3E5 /* ViewController.swift in Sources */,
 				67FFB1F220F608A700937731 /* ThirdInteractor.swift in Sources */,
 				67AFF93420F4B1CF0076FA2C /* FirstView.swift in Sources */,
+				67C9F43B21393BC600DB452B /* BaseTabController.swift in Sources */,
 				67AFF93620F4B2760076FA2C /* XibView.swift in Sources */,
 				67FFB1EE20F608A700937731 /* ThirdPresenter.swift in Sources */,
+				67C9F43D21393E1D00DB452B /* RootVC.swift in Sources */,
 				67EFD1BD20ECB1CE009CE3E5 /* AppDelegate.swift in Sources */,
 				67FFB1EF20F608A700937731 /* ThirdRouter.swift in Sources */,
 				67FFB1F620F6139C00937731 /* UIView+Extensions.swift in Sources */,
