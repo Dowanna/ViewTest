@@ -35,7 +35,9 @@ protocol FirstViewDelegate: class {
 }
 extension ViewController: FirstViewDelegate {
     func createAnotherVC() {
-        let secondVC = SecondViewController()
+        let secondVC = SecondViewController {
+            self.dismiss(animated: true)
+        }
         let nav = UINavigationController(rootViewController: secondVC)
         RootVC.shared.present(nav, animated: true)
     }

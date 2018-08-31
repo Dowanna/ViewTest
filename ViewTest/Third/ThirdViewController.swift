@@ -8,9 +8,12 @@ protocol ThirdDisplayLogic: class {
 class ThirdViewController: BaseViewController<ThirdContainerView> {
     var interactor: ThirdBusinessLogic?
     var router: (NSObjectProtocol & ThirdRoutingLogic & ThirdDataPassing)?
+    let onDismiss: (() -> Void)?
     
     // MARK: Object lifecycle
-    override init(view: ThirdContainerView = ThirdContainerView()) {
+    init(view: ThirdContainerView = ThirdContainerView(),
+         onDismiss: (() -> Void)? = nil) {
+        self.onDismiss = onDismiss
         super.init(view: view)
         setup()
     }
@@ -66,7 +69,7 @@ extension ThirdViewController: ThirdDisplayLogic {
 
 // MARK: - Event handling
 extension ThirdViewController: ThirdContainerViewDelegate {
-    func onTapped() {
-        
+    func onTappedDismiss() {
+        onDismiss?()
     }
 }

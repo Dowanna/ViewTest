@@ -10,8 +10,11 @@ import Foundation
 import UIKit
 
 class SecondViewController: BaseViewController<SecondView> {
+
+    let onDismiss: (() -> Void)?
     
-    init(_ view: SecondView = SecondView()) {
+    init(_ view: SecondView = SecondView(), onDismiss: (() -> Void)? = nil) {
+        self.onDismiss = onDismiss
         super.init(view: view)
         containerView.setup(self)
     }
@@ -27,12 +30,11 @@ class SecondViewController: BaseViewController<SecondView> {
 
 }
 
-protocol SecondViewDelegate {
-    func onTappedDismiss()
-}
-
 extension SecondViewController: SecondViewDelegate {
     func onTappedDismiss() {
-        self.dismiss(animated: true)
+        onDismiss?()
+    }
+    func onTappedNewVC() {
+        self.present(ThirdViewController(onDismiss: onDismiss), animated: true)
     }
 }

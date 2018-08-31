@@ -17,11 +17,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-ZG-PcA">
-                    <rect key="frame" x="171" y="324" width="46" height="30"/>
+                    <rect key="frame" x="167" y="324" width="54" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Dismiss"/>
                     <connections>
                         <action selector="onTappedDismiss:" destination="-1" eventType="touchUpInside" id="3QJ-a3-D2Z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-5e-Sj1">
+                    <rect key="frame" x="179" y="388" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="new"/>
+                    <connections>
+                        <action selector="onTappedNewVC:" destination="-1" eventType="touchUpInside" id="qeK-pW-L26"/>
                     </connections>
                 </button>
             </subviews>

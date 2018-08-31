@@ -28,7 +28,6 @@ class RootVC: UIViewController {
         tabController.willMove(toParentViewController: self)
         addChildViewController(BaseTabController.shared)
         view.addFullsizeView(tabController.view)
-//        view.addFullsizeSubView(tabController.view)
         tabController.didMove(toParentViewController: self)
     }
 }

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class BaseViewController<C>: UIViewController {
     public typealias ContainerView = C
 
@@ -31,5 +30,25 @@ class BaseViewController<C>: UIViewController {
             return
         }
         self.view = containerView
+    }
+
+    // RootVCに対してpresentしてdismissした際にBaseVCのwillAppearが呼ばれるか実験
+    // 仮説: dismissする際にobserverが横取りするのが原因？
+    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(coordinateViewAppear),
+                                               name: .ModalDismissing,
+                                               object: nil)
+
+        super.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
+
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        NotificationCenter.default.post(name: .ModalDismissing, object: nil)
+        super.dismiss(animated:flag, completion: completion)
+    }
+
+    @objc func coordinateViewAppear() {
+        print("coordinateViewAppear!")
     }
 }
